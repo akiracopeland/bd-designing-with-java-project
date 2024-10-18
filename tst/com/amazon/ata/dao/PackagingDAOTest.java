@@ -28,7 +28,7 @@ class PackagingDAOTest {
     private PackagingDAO packagingDAO;
 
     @Test
-    public void findShipmentOptions_unknownFulfillmentCenter_throwsUnknownFulfillmentCenterException() {
+    public void findShipmentOptions_unknownFulfillmentCenter_throwsUnknownFulfillmentCenterException()  {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
         FulfillmentCenter fulfillmentCenter = new FulfillmentCenter("nonExistentFcCode");
@@ -40,7 +40,7 @@ class PackagingDAOTest {
     }
 
     @Test
-    public void findShipmentOptions_packagingDoesntFit_throwsNoPackagingFitsItemException() {
+    public void findShipmentOptions_packagingDoesntFit_throwsNoPackagingFitsItemException()  {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
 

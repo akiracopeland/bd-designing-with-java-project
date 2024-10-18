@@ -45,6 +45,10 @@ public class Packaging {
         return BigDecimal.valueOf(0);
     }
 
+    public BigDecimal getSustainabilityIndex() {
+        return BigDecimal.valueOf(0);
+    }
+
     @Override
     public boolean equals(Object o) {
         // Can't be equal to null
@@ -70,4 +74,6 @@ public class Packaging {
     public int hashCode() {
         return Objects.hash(getMaterial());
     }
+
+
 }

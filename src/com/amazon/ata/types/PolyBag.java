@@ -7,6 +7,8 @@ public class PolyBag extends Packaging {
 
     private BigDecimal volume;
 
+    private static final BigDecimal sustainabilityIndex = BigDecimal.valueOf(0.012);
+
     public PolyBag(Material material, BigDecimal volume) {
         super(material);
         this.volume = volume;
@@ -15,6 +17,8 @@ public class PolyBag extends Packaging {
     public BigDecimal getVolume() {
         return this.volume;
     }
+
+    public BigDecimal getSustainabilityIndex() { return sustainabilityIndex; }
 
     @Override
     public boolean canFitItem(Item item) {

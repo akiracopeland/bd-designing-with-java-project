@@ -21,6 +21,8 @@ public class Box extends Packaging {
     private BigDecimal height;
 
 
+    private static final BigDecimal sustainabilityIndex = BigDecimal.valueOf(0.017);
+
     /**
      * Instantiates a new Packaging object.
      *
@@ -48,6 +50,7 @@ public class Box extends Packaging {
         return height;
     }
 
+    public BigDecimal getSustainabilityIndex() { return sustainabilityIndex; }
 
     @Override
     public boolean canFitItem(Item item) {

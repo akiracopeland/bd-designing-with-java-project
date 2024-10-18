@@ -3,6 +3,8 @@ package com.amazon.ata.service;
 import com.amazon.ata.cost.MonetaryCostStrategy;
 import com.amazon.ata.dao.PackagingDAO;
 import com.amazon.ata.datastore.PackagingDatastore;
+import com.amazon.ata.exceptions.NoPackagingFitsItemException;
+import com.amazon.ata.exceptions.UnknownFulfillmentCenterException;
 import com.amazon.ata.types.FulfillmentCenter;
 import com.amazon.ata.types.Item;
 import com.amazon.ata.types.ShipmentOption;
@@ -31,12 +33,13 @@ class ShipmentServiceTest {
     private FulfillmentCenter existentFC = new FulfillmentCenter("ABE2");
     private FulfillmentCenter nonExistentFC = new FulfillmentCenter("NonExistentFC");
 
-    private ShipmentService shipmentService = new ShipmentService(new PackagingDAO(new PackagingDatastore()),
-            new MonetaryCostStrategy());
+    private ShipmentService shipmentService;
 
     @Test
     void findBestShipmentOption_existentFCAndItemCanFit_returnsShipmentOption() {
         // GIVEN & WHEN
+        shipmentService = new ShipmentService(new PackagingDAO(new PackagingDatastore()),
+                new MonetaryCostStrategy());
         ShipmentOption shipmentOption = shipmentService.findShipmentOption(smallItem, existentFC);
 
         // THEN
@@ -44,8 +47,10 @@ class ShipmentServiceTest {
     }
 
     @Test
-    void findBestShipmentOption_existentFCAndItemCannotFit_returnsShipmentOption() {
+    void findBestShipmentOption_existentFCAndItemCannotFit_returnsShipmentOption()  {
         // GIVEN & WHEN
+        shipmentService = new ShipmentService(new PackagingDAO(new PackagingDatastore()),
+                new MonetaryCostStrategy());
         ShipmentOption shipmentOption = shipmentService.findShipmentOption(largeItem, existentFC);
 
         // THEN
@@ -55,6 +60,8 @@ class ShipmentServiceTest {
     @Test
     void findBestShipmentOption_nonExistentFCAndItemCanFit_returnsShipmentOption() {
         // GIVEN & WHEN
+        shipmentService = new ShipmentService(new PackagingDAO(new PackagingDatastore()),
+                new MonetaryCostStrategy());
         ShipmentOption shipmentOption = shipmentService.findShipmentOption(smallItem, nonExistentFC);
 
         // THEN
@@ -64,6 +71,8 @@ class ShipmentServiceTest {
     @Test
     void findBestShipmentOption_nonExistentFCAndItemCannotFit_returnsShipmentOption() {
         // GIVEN & WHEN
+        shipmentService = new ShipmentService(new PackagingDAO(new PackagingDatastore()),
+                new MonetaryCostStrategy());
         ShipmentOption shipmentOption = shipmentService.findShipmentOption(largeItem, nonExistentFC);
 
         // THEN
