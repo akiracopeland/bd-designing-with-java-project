@@ -51,7 +51,7 @@ class PackagingDAOTest {
     }
 
     @Test
-    public void findShipmentOptions_onePackagingAvailableAndFits_singlePackaging() throws Exception {
+    public void findShipmentOptions_threePackagingAvailableAndFits_triplePackaging() throws Exception {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
 
@@ -59,7 +59,7 @@ class PackagingDAOTest {
         List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, ind1);
 
         // THEN
-        assertEquals(1, shipmentOptions.size(),
+        assertEquals(3, shipmentOptions.size(),
             "When fulfillment center has packaging that can fit item, return a ShipmentOption with the item, "
                 + "fulfillment center, and packaging that can fit the item.");
     }
@@ -79,7 +79,7 @@ class PackagingDAOTest {
     }
 
     @Test
-    public void findShipmentOptions_twoPackagingAvailableAndBothFit_twoPackagingOptions() throws Exception {
+    public void findShipmentOptions_fourPackagingAvailableAndAllFit_fourPackagingOptions() throws Exception {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
 
@@ -87,7 +87,7 @@ class PackagingDAOTest {
         List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, abe2);
 
         // THEN
-        assertEquals(2, shipmentOptions.size(),
+        assertEquals(4, shipmentOptions.size(),
             "When fulfillment center has multiple packaging that can fit item, return a ShipmentOption "
                 + "for each.");
     }

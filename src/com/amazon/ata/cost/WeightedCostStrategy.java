@@ -1,12 +1,11 @@
 package com.amazon.ata.cost;
 
-import com.amazon.ata.types.Packaging;
 import com.amazon.ata.types.ShipmentCost;
 import com.amazon.ata.types.ShipmentOption;
 
 import java.math.BigDecimal;
 
-public class WeightedCostStrategy implements CostStrategy{
+public class WeightedCostStrategy implements CostStrategy {
 
     private CostStrategy carbonCost = new CarbonCostStrategy();
     private CostStrategy monetaryCost = new MonetaryCostStrategy();

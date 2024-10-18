@@ -6,7 +6,6 @@ import com.amazon.ata.exceptions.UnknownFulfillmentCenterException;
 import com.amazon.ata.types.FcPackagingOption;
 import com.amazon.ata.types.FulfillmentCenter;
 import com.amazon.ata.types.Item;
-import com.amazon.ata.types.Packaging;
 import com.amazon.ata.types.ShipmentOption;
 
 import java.util.*;

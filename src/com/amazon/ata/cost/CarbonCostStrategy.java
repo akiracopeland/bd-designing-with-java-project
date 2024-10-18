@@ -6,7 +6,7 @@ import com.amazon.ata.types.ShipmentOption;
 
 import java.math.BigDecimal;
 
-public class CarbonCostStrategy implements CostStrategy{
+public class CarbonCostStrategy implements CostStrategy {
 
 
     public CarbonCostStrategy() {}
