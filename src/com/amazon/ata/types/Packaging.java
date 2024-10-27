@@ -1,7 +1,6 @@
 package com.amazon.ata.types;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  * Represents a packaging option.
@@ -40,12 +39,12 @@ public class Packaging {
         return BigDecimal.valueOf(0);
     }
 
-    public Material getMaterial() { return material; }
+    public Material getMaterial() {
+        return material;
+    }
 
     public BigDecimal getSustainabilityIndex() {
         return BigDecimal.valueOf(0);
     }
-
-
 
 }
