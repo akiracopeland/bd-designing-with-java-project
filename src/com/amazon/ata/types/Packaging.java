@@ -12,17 +12,12 @@ import java.util.Objects;
  */
 public class Packaging {
 
+    private Material material;
     /**
      * The material this packaging is made of.
      */
-    private Material material;
-
-    public Packaging(Material material) {
+    Packaging(Material material) {
         this.material = material;
-    }
-
-    public Material getMaterial() {
-        return material;
     }
 
     /**
@@ -45,35 +40,12 @@ public class Packaging {
         return BigDecimal.valueOf(0);
     }
 
+    public Material getMaterial() { return material; }
+
     public BigDecimal getSustainabilityIndex() {
         return BigDecimal.valueOf(0);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        // Can't be equal to null
-        if (o == null) {
-            return false;
-        }
-
-        // Referentially equal
-        if (this == o) {
-            return true;
-        }
-
-        // Check if it's a different type
-        if (getClass() != o.getClass()) {
-            return false;
-        }
-
-        Packaging packaging = (Packaging) o;
-        return getMaterial() == packaging.getMaterial();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getMaterial());
-    }
 
 
 }

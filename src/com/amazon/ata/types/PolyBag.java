@@ -9,6 +9,8 @@ public class PolyBag extends Packaging {
 
     private BigDecimal volume;
 
+    private Material material;
+
     public PolyBag(Material material, BigDecimal volume) {
         super(material);
         this.volume = volume;

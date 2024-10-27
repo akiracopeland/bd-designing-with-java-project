@@ -7,6 +7,8 @@ public class Box extends Packaging {
 
     private static final BigDecimal sustainabilityIndex = BigDecimal.valueOf(0.017);
 
+
+    private Material material;
     /**
      * This packaging's length.
      */
